@@ -1,4 +1,4 @@
-%li.dd-item
+%li.dd-item{:class => ('featured' if article.featured?)}
   %div.dd-item-inner
     - if article.live?
       %div.article-status.live
@@ -9,6 +9,8 @@
     = link_to spina.edit_admin_article_path(article), class: 'button button-link button-small sortable-link' do
       = article.title
     %span.pull-right
+      - if article.featured?
+        =image_tag 'articles/star.svg'
       = link_to spina.edit_admin_article_path(article), class: 'button button-small button-link dd-nodrag' do
         = icon('pencil-outline')
         = t('spina.edit')

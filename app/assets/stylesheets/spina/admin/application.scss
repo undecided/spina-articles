@@ -17,9 +17,28 @@
   }
 }
 
-.dd-item:hover {
-  .article-status {
-    opacity: 0.7;
-    width: 9px;
+.dd-item {
+  &.featured {
+    transition: 0.5s;
+    background-size: 200% auto;
+    a {
+      // color: white;
+      // font-weight: bold;
+    }
+    &:hover {
+      background-position: right center;
+    }
+    img {
+      height: 42px;
+      position: absolute;
+      top: 5px;
+      right: 80px;
+    }
+  }
+  &:hover {
+    .article-status {
+      opacity: 0.7;
+      width: 9px;
+    }
   }
 }
